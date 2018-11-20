@@ -35,7 +35,7 @@ Route::get('/', function() {
     ]);
 });
 
-Route::get('/serviceSummary/{$services}', 'ServiceController@showServices' );
+Route::get('/getServices', 'ServiceController@index' );
 
 
 

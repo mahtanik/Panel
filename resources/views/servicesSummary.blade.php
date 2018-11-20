@@ -184,13 +184,12 @@
                                         <span data-brackets-id="2091"></span> <b data-brackets-id="2092" class="caret"></b>
                                     </div>
                                     انتخاب کنید :
-                                            {{--@foreach( $services as $service)--}}
-                                            {{--<select style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">--}}
-                                            {{--<option>{{ $service }}</option>--}}
-                                            {{--@endforeach--}}
-                                                <select>
-                                                    <option> {{$services}}</option>
+                                    <select>
+                                        <option> kk </option>
                                     </select>
+                                    @foreach( $services as $service)
+                                        <p> {{ $service }}</p>
+                                    @endforeach
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
