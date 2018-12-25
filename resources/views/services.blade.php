@@ -64,7 +64,9 @@
                             @endforeach
                     </tbody>
                 </table>
-                {{ csrf_field() }}
+            </div>
+            <div class = modal-footer>
+                <button type="button" class="close" data-dismiss="modal">ok</button>
             </div>
         </div>
     </div>
