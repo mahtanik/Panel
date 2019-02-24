@@ -1645,12 +1645,12 @@ if (typeof NProgress != 'undefined') {
 			});
    
 		}
-   	   
+
 	   function init_daterangepicker_right() {
-	      
+
 				if( typeof ($.fn.daterangepicker) === 'undefined'){ return; }
 				console.log('init_daterangepicker_right');
-		  
+
 				var cb = function(start, end, label) {
 				  console.log(start.toISOString(), end.toISOString(), label);
 				  $('#reportrange_right span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
@@ -1704,11 +1704,8 @@ if (typeof NProgress != 'undefined') {
 				  console.log("hide event fired");
 				});
 				$('#reportrange_right').on('apply.daterangepicker', function(ev, picker) {
-				  console.log("apply event fired, start/end dates are " + picker.startDate.format('MMMM D, YYYY') + " to " + picker.endDate.format('MMMM D, YYYY'));
-
-
-
-
+				  console.log("apply event fired, start/end dates are " +  picker.startDate.format('MMMM D, YYYY')  + " to " + picker.endDate.format('MMMM D, YYYY'));
+                    alert( picker.startDate.format('MMMM D, YYYY') )
 				});
 				$('#reportrange_right').on('cancel.daterangepicker', function(ev, picker) {
 				  console.log("cancel event fired");
@@ -2466,17 +2463,15 @@ if (typeof NProgress != 'undefined') {
 					  dom: "Blfrtip",
 					  buttons: [
 						{
-						  extend: "کپی",
+						  extend: "copy",
 						  className: "btn-sm"
 						},
-						
 						{
-						  extend: "اکسل",
+						  extend: "excel",
 						  className: "btn-sm"
 						},
-						
 						{
-						  extend: "پرینت",
+						  extend: "printc",
 						  className: "btn-sm"
 						},
 					  ],
@@ -4191,203 +4186,203 @@ if (typeof NProgress != 'undefined') {
 			// }
 			  
 			   //echart Pie
-
-			if ($('#echart_pie').length ){
-
-			  var echartPie = echarts.init(document.getElementById('echart_pie'), theme);
-
-			  echartPie.setOption({
-				tooltip: {
-				  trigger: 'item',
-				  formatter: "{a} <br/>{b} : {c} ({d}%)"
-				},
-				legend: {
-				  x: 'center',
-				  y: 'bottom',
-				  data: [ 'راهی نو', 'ذهن آزما', 'توپخونه', 'بومرنگ' , 'بازینو']
-				},
-				toolbox: {
-				  show: true,
-				  feature: {
-					magicType: {
-					  show: true,
-					  type: ['pie', 'funnel'],
-					  option: {
-						funnel: {
-						  x: '25%',
-						  width: '50%',
-						  funnelAlign: 'left',
-						  max: 1548
-						}
-					  }
-					},
-					restore: {
-					  show: true,
-					  title: "بازیابی"
-					},
-					saveAsImage: {
-					  show: true,
-					  title: "ذخیره"
-					}
-				  }
-				},
-				calculable: true,
-				series: [{
-				  name: 'تعداد مشترکین',
-				  type: 'pie',
-				  radius: '55%',
-				  center: ['50%', '48%'],
-				  data: [{
-					value: 335,
-					name: 'راهی نو'
-				  }, {
-					value: 310,
-					name: 'ذهن آزما'
-				  }, {
-					value: 234,
-					name: 'توپخونه'
-				  }, {
-					value: 135,
-					name: 'بومرنگ'
-				  }, {
-					value: 1548,
-					name: 'بازینو'
-				  }]
-				}]
-			  });
-
-			  var dataStyle = {
-				normal: {
-				  label: {
-					show: false
-				  },
-				  labelLine: {
-					show: false
-				  }
-				}
-			  };
-
-			  var placeHolderStyle = {
-				normal: {
-				  color: 'rgba(0,0,0,0)',
-				  label: {
-					show: false
-				  },
-				  labelLine: {
-					show: false
-				  }
-				},
-				emphasis: {
-				  color: 'rgba(0,0,0,0)'
-				}
-			  };
-
-			}
-
-			   //echart Mini Pie
-
-			if ($('#echart_mini_pie').length ){
-
-			  var echartMiniPie = echarts.init(document.getElementById('echart_mini_pie'), theme);
-
-			  echartMiniPie .setOption({
-				title: {
-				  text: 'Chart #2',
-				  subtext: 'From ExcelHome',
-				  sublink: 'http://e.weibo.com/1341556070/AhQXtjbqh',
-				  x: 'center',
-				  y: 'center',
-				  itemGap: 20,
-				  textStyle: {
-					color: 'rgba(30,144,255,0.8)',
-					fontFamily: '微软雅黑',
-					fontSize: 35,
-					fontWeight: 'bolder'
-				  }
-				},
-				tooltip: {
-				  show: true,
-				  formatter: "{a} <br/>{b} : {c} ({d}%)"
-				},
-				legend: {
-				  orient: 'vertical',
-				  x: 170,
-				  y: 45,
-				  itemGap: 12,
-				  data: ['68%Something #1', '29%Something #2', '3%Something #3'],
-				},
-				toolbox: {
-				  show: true,
-				  feature: {
-					mark: {
-					  show: true
-					},
-					dataView: {
-					  show: true,
-					  title: "Text View",
-					  lang: [
-						"Text View",
-						"Close",
-						"Refresh",
-					  ],
-					  readOnly: false
-					},
-					restore: {
-					  show: true,
-					  title: "Restore"
-					},
-					saveAsImage: {
-					  show: true,
-					  title: "Save Image"
-					}
-				  }
-				},
-				series: [{
-				  name: '1',
-				  type: 'pie',
-				  clockWise: false,
-				  radius: [105, 130],
-				  itemStyle: dataStyle,
-				  data: [{
-					value: 68,
-					name: '68%Something #1'
-				  }, {
-					value: 32,
-					name: 'invisible',
-					itemStyle: placeHolderStyle
-				  }]
-				}, {
-				  name: '2',
-				  type: 'pie',
-				  clockWise: false,
-				  radius: [80, 105],
-				  itemStyle: dataStyle,
-				  data: [{
-					value: 29,
-					name: '29%Something #2'
-				  }, {
-					value: 71,
-					name: 'invisible',
-					itemStyle: placeHolderStyle
-				  }]
-				}, {
-				  name: '3',
-				  type: 'pie',
-				  clockWise: false,
-				  radius: [25, 80],
-				  itemStyle: dataStyle,
-				  data: [{
-					value: 3,
-					name: '3%Something #3'
-				  }, {
-					value: 97,
-					name: 'invisible',
-					itemStyle: placeHolderStyle
-				  }]
-				}]
-			  });
-
-			}
+            //
+			// if ($('#echart_pie').length ){
+            //
+			//   var echartPie = echarts.init(document.getElementById('echart_pie'), theme);
+            //
+			//   echartPie.setOption({
+			// 	tooltip: {
+			// 	  trigger: 'item',
+			// 	  formatter: "{a} <br/>{b} : {c} ({d}%)"
+			// 	},
+			// 	legend: {
+			// 	  x: 'center',
+			// 	  y: 'bottom',
+			// 	  data: [ 'راهی نو', 'ذهن آزما', 'توپخونه', 'بومرنگ' , 'بازینو']
+			// 	},
+			// 	toolbox: {
+			// 	  show: true,
+			// 	  feature: {
+			// 		magicType: {
+			// 		  show: true,
+			// 		  type: ['pie', 'funnel'],
+			// 		  option: {
+			// 			funnel: {
+			// 			  x: '25%',
+			// 			  width: '50%',
+			// 			  funnelAlign: 'left',
+			// 			  max: 1548
+			// 			}
+			// 		  }
+			// 		},
+			// 		restore: {
+			// 		  show: true,
+			// 		  title: "بازیابی"
+			// 		},
+			// 		saveAsImage: {
+			// 		  show: true,
+			// 		  title: "ذخیره"
+			// 		}
+			// 	  }
+			// 	},
+			// 	calculable: true,
+			// 	series: [{
+			// 	  name: 'تعداد مشترکین',
+			// 	  type: 'pie',
+			// 	  radius: '55%',
+			// 	  center: ['50%', '48%'],
+			// 	  data: [{
+			// 		value: 335,
+			// 		name: 'راهی نو'
+			// 	  }, {
+			// 		value: 310,
+			// 		name: 'ذهن آزما'
+			// 	  }, {
+			// 		value: 234,
+			// 		name: 'توپخونه'
+			// 	  }, {
+			// 		value: 135,
+			// 		name: 'بومرنگ'
+			// 	  }, {
+			// 		value: 1548,
+			// 		name: 'بازینو'
+			// 	  }]
+			// 	}]
+			//   });
+            //
+			//   var dataStyle = {
+			// 	normal: {
+			// 	  label: {
+			// 		show: false
+			// 	  },
+			// 	  labelLine: {
+			// 		show: false
+			// 	  }
+			// 	}
+			//   };
+            //
+			//   var placeHolderStyle = {
+			// 	normal: {
+			// 	  color: 'rgba(0,0,0,0)',
+			// 	  label: {
+			// 		show: false
+			// 	  },
+			// 	  labelLine: {
+			// 		show: false
+			// 	  }
+			// 	},
+			// 	emphasis: {
+			// 	  color: 'rgba(0,0,0,0)'
+			// 	}
+			//   };
+            //
+			// }
+            //
+			//    //echart Mini Pie
+            //
+			// if ($('#echart_mini_pie').length ){
+            //
+			//   var echartMiniPie = echarts.init(document.getElementById('echart_mini_pie'), theme);
+            //
+			//   echartMiniPie .setOption({
+			// 	title: {
+			// 	  text: 'Chart #2',
+			// 	  subtext: 'From ExcelHome',
+			// 	  sublink: 'http://e.weibo.com/1341556070/AhQXtjbqh',
+			// 	  x: 'center',
+			// 	  y: 'center',
+			// 	  itemGap: 20,
+			// 	  textStyle: {
+			// 		color: 'rgba(30,144,255,0.8)',
+			// 		fontFamily: '微软雅黑',
+			// 		fontSize: 35,
+			// 		fontWeight: 'bolder'
+			// 	  }
+			// 	},
+			// 	tooltip: {
+			// 	  show: true,
+			// 	  formatter: "{a} <br/>{b} : {c} ({d}%)"
+			// 	},
+			// 	legend: {
+			// 	  orient: 'vertical',
+			// 	  x: 170,
+			// 	  y: 45,
+			// 	  itemGap: 12,
+			// 	  data: ['68%Something #1', '29%Something #2', '3%Something #3'],
+			// 	},
+			// 	toolbox: {
+			// 	  show: true,
+			// 	  feature: {
+			// 		mark: {
+			// 		  show: true
+			// 		},
+			// 		dataView: {
+			// 		  show: true,
+			// 		  title: "Text View",
+			// 		  lang: [
+			// 			"Text View",
+			// 			"Close",
+			// 			"Refresh",
+			// 		  ],
+			// 		  readOnly: false
+			// 		},
+			// 		restore: {
+			// 		  show: true,
+			// 		  title: "Restore"
+			// 		},
+			// 		saveAsImage: {
+			// 		  show: true,
+			// 		  title: "Save Image"
+			// 		}
+			// 	  }
+			// 	},
+			// 	series: [{
+			// 	  name: '1',
+			// 	  type: 'pie',
+			// 	  clockWise: false,
+			// 	  radius: [105, 130],
+			// 	  itemStyle: dataStyle,
+			// 	  data: [{
+			// 		value: 68,
+			// 		name: '68%Something #1'
+			// 	  }, {
+			// 		value: 32,
+			// 		name: 'invisible',
+			// 		itemStyle: placeHolderStyle
+			// 	  }]
+			// 	}, {
+			// 	  name: '2',
+			// 	  type: 'pie',
+			// 	  clockWise: false,
+			// 	  radius: [80, 105],
+			// 	  itemStyle: dataStyle,
+			// 	  data: [{
+			// 		value: 29,
+			// 		name: '29%Something #2'
+			// 	  }, {
+			// 		value: 71,
+			// 		name: 'invisible',
+			// 		itemStyle: placeHolderStyle
+			// 	  }]
+			// 	}, {
+			// 	  name: '3',
+			// 	  type: 'pie',
+			// 	  clockWise: false,
+			// 	  radius: [25, 80],
+			// 	  itemStyle: dataStyle,
+			// 	  data: [{
+			// 		value: 3,
+			// 		name: '3%Something #3'
+			// 	  }, {
+			// 		value: 97,
+			// 		name: 'invisible',
+			// 		itemStyle: placeHolderStyle
+			// 	  }]
+			// 	}]
+			//   });
+            //
+			// }
 			//
 			//    //echart Map
 			//

@@ -1,8 +1,6 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,7 +95,7 @@
                 <h4 class="modal-title" style="color: #985f0d">لیست کاربران</h4>
             </div>
             <div class="modal-body">
-                <table class="table table-striped">
+                <table class="table table-striped" id="user_detail_table">
                     <thead>
                     <tr>
                         <th>تاریخ فعالسازی</th>
@@ -162,6 +160,7 @@
                                 <ul dir="rtl" class="nav child_menu">
                                     <li><a href="servicesSummary">گزارش مجتمع</a></li>
                                     <li><a href="services">گزارش عملکرد سرویس ها</a></li>
+                                    <li><a href="usersPage">گزارش عملکرد کاربران</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -326,6 +325,45 @@
             }
         })
     });
+
+    // $(document).ready(function() {
+    //     var table = $('#user_detail_table').DataTable({
+    //         dom: 'Bfrtip',
+    //         buttons: [
+    //             {
+    //                 extend: 'excel',
+    //                 text: 'Export excel',
+    //                 className: 'exportExcel',
+    //                 filename: 'Export excel',
+    //                 exportOptions: {
+    //                     modifier: {
+    //                         page: 'all'
+    //                     }
+    //                 }
+    //             },
+    //             {
+    //                 extend: 'copy',
+    //                 text: '<u>C</u>opie presse papier',
+    //                 className: 'exportExcel',
+    //                 key: {
+    //                     key: 'c',
+    //                     altKey: true
+    //                 }
+    //             },
+    //             {
+    //                 text: 'Alert Js',
+    //                 className: 'exportExcel',
+    //                 action: function(e, dt, node, config) {
+    //                     alert('Activated!');
+    //                 }
+    //             }]
+    //     });
+    //
+    // });
+
+
+
+
 </script>
 
 <script src="/HUB/public/js/custom.min.js"></script>

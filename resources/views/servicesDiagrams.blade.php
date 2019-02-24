@@ -109,6 +109,7 @@
                                     <ul dir="rtl" class="nav child_menu">
                                         <li><a href="servicesSummary">گزارش مجتمع</a></li>
                                         <li><a href="services">گزارش عملکرد سرویس ها</a></li>
+                                        <li><a href="usersPage">گزارش عملکرد کاربران</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -236,8 +237,9 @@
 
             var d = new Date();
             var month = d.getMonth();
+            var year = d.getFullYear();
 
-            console.log(month);
+            console.log(year);
 
             $.ajax({
                 type: 'get',
@@ -245,7 +247,8 @@
 
                 data: {
                     's' : selected ,
-                    'mm' : '05'
+                    'mm' : '3' ,
+                    'y' : '2018'
                 },
 
                 success: function (data) {
@@ -265,6 +268,8 @@
                         var unsub_array = Object.values(data['bar_unsubs']);
                         var total_array = Object.values(data['bar_total']);
                         var chart_data_array = [];
+
+                        console.log(data['months'])
 
                         for (var i = 0; i< 3 ; i++) {
                             var keys = ['y', 'z', 'a', 'x'];

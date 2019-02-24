@@ -17,9 +17,9 @@
         <link href="/HUB/public/css/daterangepicker.css" rel="stylesheet">
         <!-- Custom Theme Style -->
         <link href="/HUB/public/css/custom.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="HUB/public/css/persian.datepicker.css"/>
+        {{--<link rel="stylesheet" href="HUB/public/css/persian.datepicker.css"/>--}}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
+        {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js" type="text/javascript"></script>--}}
         <style>
             .isDisabled {
                 color: currentColor;
@@ -29,9 +29,8 @@
                 pointer-events: none;
             }
         </style>
-
-        <script src="HUB/public/js/persian.date.js"></script>
-        <script src="HUB/public/js/persian.datepicker.js"></script>
+        {{--<script src="HUB/public/js/persian.date.js"></script>--}}
+        {{--<script src="HUB/public/js/persian.datepicker.js"></script>--}}
         <script src="/HUB/public/js/jquery.min.js"></script>
         <!-- Bootstrap -->
         <script src="/HUB/public/js/bootstrap.min.js"></script>
@@ -87,9 +86,6 @@
         <script src="/HUB/public/js/jszip.min.js"></script>
         <script src="/HUB/public/js/pdfmake.min.js"></script>
         <script src="/HUB/public/js/vfs_fonts.js"></script>
-
-
-
     </head>
     <body class="nav-md">
         <!-- Modal -->
@@ -102,7 +98,7 @@
                         <h4 class="modal-title" style="color: #985f0d">لیست کاربران</h4>
                     </div>
                     <div class="modal-body">
-                        <table class="table table-striped">
+                        <table class="table table-striped" id="user_detail_table">
                             <thead dir="rtl">
                                 <tr>
                                     <th style="text-align: center"> شماره موبایل</th>
@@ -167,6 +163,7 @@
                                         <ul dir="rtl" class="nav child_menu">
                                             <li><a href="servicesSummary">گزارش مجتمع</a></li>
                                             <li><a href="services">گزارش عملکرد سرویس ها</a></li>
+                                            <li><a href="usersPage">گزارش عملکرد کاربران</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -331,6 +328,36 @@
 
                 })
             });
+
+
+            // $(document).ready(function() {
+            //     var table = $('#user_detail_table').DataTable({
+            //         dom: 'Bfrtip',
+            //         buttons: [
+            //             {
+            //                 extend: 'excel',
+            //                 text: 'Export excel',
+            //                 className: 'exportExcel',
+            //                 filename: 'Export excel',
+            //                 exportOptions: {
+            //                     modifier: {
+            //                         page: 'all'
+            //                     }
+            //                 }
+            //             },
+            //             {
+            //                 extend: 'copy',
+            //                 text: 'Copy',
+            //                 className: 'exportExcel',
+            //                 key: {
+            //                     key: 'c',
+            //                     altKey: true
+            //                 }
+            //             }]
+            //     });
+            //
+            // });
+
         </script>
 
         <!-- jQuery -->
